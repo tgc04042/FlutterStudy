@@ -10,36 +10,43 @@ class HomeScreen extends StatelessWidget {
         top: true,
         child: Container(
           color: Colors.black,
-          child: Row(
-            // MainAxisAlignment - 주축 정렬
-            // start - 시작
-            // end - 끝
-            // center - 가운데
-            // spaceBetween - 위젯과 위젯의 사이가 동일하게 배치
-            // spaceEvenly - 위젯을 같은 간격으로 배치하지만 끝과 끝에도
-            // 위젯이 아닌 빈 간격으로 시작한다.
-            // spaceAround - spaceEvenly + 끝과 끝의 간격은 1/2
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          // MediaQuery.of(context) : column이 전체 사이즈를 차지할 수 있도록 함
+          //height: MediaQuery.of(context).size.height, // size : 핸드폰의 가로 or 세로 사이즈, MainAxisSize 테스트할 때 주석처
+          child: Column(
+
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              Container(
-                color: Colors.red,
-                width: 50.0,
-                height: 50.0,
+              // Expand / Flexible    ->  row나 column 위젯의 children에만 사용 가능
+              Flexible(
+                flex:2,
+                child: Container(
+                  color: Colors.red,
+                  width: 50.0,
+                  height: 50.0,
+                ),
               ),
-              Container(
-                color: Colors.orange,
-                width: 50.0,
-                height: 50.0,
+              Expanded(
+                child: Container(
+                  color: Colors.orange,
+                  width: 50.0,
+                  height: 50.0,
+                ),
               ),
-              Container(
-                color: Colors.yellow,
-                width: 50.0,
-                height: 50.0,
+              Expanded(
+                child: Container(
+                  color: Colors.yellow,
+                  width: 50.0,
+                  height: 50.0,
+                ),
               ),
-              Container(
-                color: Colors.green,
-                width: 50.0,
-                height: 50.0,
+              Expanded(
+                child: Container(
+                  color: Colors.green,
+                  width: 50.0,
+                  height: 50.0,
+                ),
               ),
             ],
           ),
